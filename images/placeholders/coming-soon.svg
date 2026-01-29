@@ -1,0 +1,7 @@
+﻿<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#fff9ed"/>
+  <rect x="50" y="50" width="700" height="500" fill="none" stroke="#c9a961" stroke-width="2" stroke-dasharray="10,5"/>
+  <text x="400" y="270" font-family="Georgia, serif" font-size="28" fill="#4a3428" text-anchor="middle" font-weight="600">Collection Coming Soon</text>
+  <text x="400" y="310" font-family="Georgia, serif" font-size="16" fill="#6b6560" text-anchor="middle">This collection will be added shortly</text>
+  <text x="400" y="350" font-family="Georgia, serif" font-size="16" fill="#8b4a3e" text-anchor="middle" opacity="0.7">Visit our store to see all available products</text>
+</svg>

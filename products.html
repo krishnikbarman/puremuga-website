@@ -3,12 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Browse our collection of traditional Assamese silk products - Sador Mekhela, silk sarees, and authentic handwoven garments.">
-    <meta name="keywords" content="Assamese silk products, buy Sador Mekhela, silk sarees online, Muga silk, Pat silk, traditional garments">
-    <title>PureMuga | Authentic Assamese Silk & Sador Mekhela</title>
+    <meta name="description" content="Explore our collection of authentic Assamese silk - Muga silk Mekhela Chador, Pat silk sarees, and traditional garments. Available at our Jorhat store.">
+    <meta name="keywords" content="Assamese silk collection, Mekhela Chador Jorhat, Pat silk sarees, traditional Assamese wear, Muga silk">
+    <title>Our Products | PureMuga - Jorhat</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Ensure product grid maintains proper spacing with any number of items */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        /* Hide empty product categories */
+        .product-category:has(.product-grid:empty) {
+            display: none;
+        }
+    </style>
 </head>
 <body>
+    <script>
+        // Remove product cards with missing or broken images
+        document.addEventListener('DOMContentLoaded', function() {
+            const productItems = document.querySelectorAll('.product-grid-item');
+            
+            productItems.forEach(item => {
+                const img = item.querySelector('img');
+                if (img) {
+                    // Check if image loads successfully
+                    img.addEventListener('error', function() {
+                        // Remove the entire card if image fails to load
+                        item.remove();
+                    });
+                    
+                    // Also check if src is empty or missing
+                    if (!img.src || img.src === '' || img.src === window.location.href) {
+                        item.remove();
+                    }
+                } else {
+                    // Remove card if no image element exists
+                    item.remove();
+                }
+            });
+        });
+    </script>
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
@@ -27,247 +66,215 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container text-center">
-            <h1>Our Exquisite Collection</h1>
-            <p>
-                Explore PureMuga’s curated selection of authentic Assamese silk and traditional garments
-            </p>
+            <h1>Our Products</h1>
+            <p>A showcase of authentic Assamese silk and traditional garments, available at our physical store in Jorhat.</p>
         </div>
     </section>
 
-    <!-- Sador Mekhela Collection -->
-    <section class="section" id="sador-mekhela">
+    <!-- Pure Pat Mekhela Chador -->
+    <section class="section" id="pure-pat-mekhela">
         <div class="container">
-            <div class="section-title">
-                <h2>Sador Mekhela Collection</h2>
-                <p>Traditional two-piece Assamese garments for every special occasion</p>
-            </div>
-
-            <div class="products-grid">
-                <!-- Product 1 -->
-                <div class="product-card">
-                    <div class="product-image" data-placeholder="Sador Mekhela">
-                        <img src="images/products/sador-mekhela/sador-01.jpg" alt="Traditional Muga Silk Sador Mekhela">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Traditional Muga Silk Sador Mekhela</h3>
-                        <p class="product-fabric">Fabric: Pure Muga Silk</p>
-                        <p class="product-description">
-                            Exquisite handwoven Muga silk with traditional Assamese motifs. Perfect for weddings 
-                            and festive celebrations. Features golden shimmer characteristic of authentic Muga silk.
-                        </p>
-                        <a href="https://wa.me/91XXXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Traditional%20Muga%20Silk%20Sador%20Mekhela" 
-                           class="btn btn-whatsapp" target="_blank" rel="noopener">Enquire on WhatsApp</a>
-                    </div>
+            <div class="product-category">
+                <div class="category-header">
+                    <h2>Pure Pat Mekhela Chador</h2>
+                    <p>Classic elegance in pristine Pat silk. Soft, breathable, and adorned with traditional Assamese motifs, perfect for daily wear and special occasions.</p>
                 </div>
-
-                <!-- Product 2 -->
-                <div class="product-card">
-                    <div class="product-image" data-placeholder="Sador Mekhela">
-                        <img src="images/products/sador-mekhela/sador-02.jpg" alt="Pat Silk Sador Mekhela">
+                <div class="product-grid">
+                    <div class="product-grid-item">
+                        <img src="images/products/pure-pat-mekhela/pat-mekhela-1.jpg" alt="Pure Pat Mekhela Chador">
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Pat Silk Sador Mekhela</h3>
-                        <p class="product-fabric">Fabric: Pat Silk</p>
-                        <p class="product-description">
-                            Elegant Pat silk Sador Mekhela with intricate border designs. Known for its pristine 
-                            white base and vibrant colored motifs. Ideal for Bihu and cultural events.
-                        </p>
-                        <a href="https://wa.me/91XXXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Pat%20Silk%20Sador%20Mekhela" 
-                           class="btn btn-whatsapp" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+                    <div class="product-grid-item">
+                        <img src="images/products/pure-pat-mekhela/pat-mekhela-2.jpg" alt="Traditional Pat Mekhela">
                     </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="product-card">
-                    <div class="product-image" data-placeholder="Sador Mekhela">
-                        <img src="images/products/sador-mekhela/sador-03.jpg" alt="Designer Sador Mekhela">
+                    <div class="product-grid-item">
+                        <img src="images/products/pure-pat-mekhela/pat-mekhela-3.jpg" alt="Handwoven Pat Silk Set">
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Designer Sador Mekhela</h3>
-                        <p class="product-fabric">Fabric: Muga-Pat Blend</p>
-                        <p class="product-description">
-                            Contemporary design meets traditional craftsmanship. Features unique color combinations 
-                            and modern motifs while preserving Assamese weaving techniques.
-                        </p>
-                        <a href="https://wa.me/91XXXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Designer%20Sador%20Mekhela" 
-                           class="btn btn-whatsapp" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+                    <div class="product-grid-item">
+                        <img src="images/products/pure-pat-mekhela/pat-mekhela-4.jpg" alt="Elegant Pat Mekhela Chador">
                     </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="product-card">
-                    <div class="product-image" data-placeholder="Sador Mekhela">
-                        <img src="images/products/sador-mekhela/sador-04.jpg" alt="Bridal Sador Mekhela">
+                    <div class="product-grid-item">
+                        <img src="images/products/pure-pat-mekhela/pat-mekhela-5.jpg" alt="Pure Pat Silk Mekhela">
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Bridal Sador Mekhela</h3>
-                        <p class="product-fabric">Fabric: Premium Muga Silk</p>
-                        <p class="product-description">
-                            Specially crafted for brides, featuring elaborate zari work and traditional Assamese 
-                            patterns. A treasured piece that celebrates your special day with cultural elegance.
-                        </p>
-                        <a href="https://wa.me/91XXXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Bridal%20Sador%20Mekhela" 
-                           class="btn btn-whatsapp" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+                    <div class="product-grid-item">
+                        <img src="images/products/pure-pat-mekhela/pat-mekhela-6.jpg" alt="Classic Pat Mekhela Design">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Silk Sarees Collection -->
-    <section class="section section-secondary-bg" id="silk-sarees">
+    <!-- Pure Pat Mekhela Chador with Riha -->
+    <section class="section section-secondary-bg" id="pure-pat-mekhela-riha">
         <div class="container">
-            <div class="section-title">
-                <h2>Silk Sarees Collection</h2>
-                <p>Six yards of pure elegance and tradition</p>
-            </div>
-
-            <div class="products-grid">
-                <!-- Product 5 -->
-                <div class="product-card">
-                    <div class="product-image" data-placeholder="Silk Saree">
-                        <img src="images/products/silk-sarees/saree-01.jpg" alt="Muga Silk Saree">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Classic Muga Silk Saree</h3>
-                        <p class="product-fabric">Fabric: Pure Muga Silk</p>
-                        <p class="product-description">
-                            Timeless Muga silk saree with traditional brocade work. The natural golden hue makes 
-                            it perfect for weddings and special occasions.
-                        </p>
-                        <a href="https://wa.me/91XXXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Classic%20Muga%20Silk%20Saree" 
-                           class="btn btn-whatsapp" target="_blank" rel="noopener">Enquire on WhatsApp</a>
-                    </div>
+            <div class="product-category">
+                <div class="category-header">
+                    <h2>Pure Pat Mekhela Chador with Riha</h2>
+                    <p>Complete three-piece sets featuring mekhela, chador, and matching riha. Exquisite coordination for weddings and ceremonial occasions.</p>
                 </div>
-
-                <!-- Product 6 -->
-                <div class="product-card">
-                    <div class="product-image" data-placeholder="Silk Saree">
-                        <img src="images/products/silk-sarees/saree-02.jpg" alt="Pat Silk Saree">
+                <div class="product-grid">
+                    <div class="product-grid-item">
+                        <img src="images/products/pat-mekhela-riha/riha-set-1.jpg" alt="Pat Mekhela Set with Riha">
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Handwoven Pat Silk Saree</h3>
-                        <p class="product-fabric">Fabric: Pat Silk</p>
-                        <p class="product-description">
-                            Beautiful Pat silk saree with traditional Assamese motifs and vibrant borders. 
-                            Lightweight and comfortable for all-day wear.
-                        </p>
-                        <a href="https://wa.me/91XXXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Handwoven%20Pat%20Silk%20Saree" 
-                           class="btn btn-whatsapp" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+                    <div class="product-grid-item">
+                        <img src="images/products/pat-mekhela-riha/riha-set-2.jpg" alt="Complete Pat Silk Set">
                     </div>
-                </div>
-
-                <!-- Product 7 -->
-                <div class="product-card">
-                    <div class="product-image" data-placeholder="Silk Saree">
-                        <img src="images/products/silk-sarees/saree-03.jpg" alt="Contemporary Silk Saree">
+                    <div class="product-grid-item">
+                        <img src="images/products/pat-mekhela-riha/riha-set-3.jpg" alt="Traditional Three-Piece Set">
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Contemporary Silk Saree</h3>
-                        <p class="product-fabric">Fabric: Eri Silk</p>
-                        <p class="product-description">
-                            Modern design with traditional roots. Eri silk saree featuring subtle patterns 
-                            and contemporary color palettes for the modern woman.
-                        </p>
-                        <a href="https://wa.me/91XXXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Contemporary%20Silk%20Saree" 
-                           class="btn btn-whatsapp" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+                    <div class="product-grid-item">
+                        <img src="images/products/pat-mekhela-riha/riha-set-4.jpg" alt="Bridal Pat Mekhela with Riha">
                     </div>
-                </div>
-
-                <!-- Product 8 -->
-                <div class="product-card">
-                    <div class="product-image" data-placeholder="Silk Saree">
-                        <img src="images/products/silk-sarees/saree-04.jpg" alt="Festive Silk Saree">
+                    <div class="product-grid-item">
+                        <img src="images/products/pat-mekhela-riha/riha-set-5.jpg" alt="Ceremonial Pat Silk Set">
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Festive Silk Saree</h3>
-                        <p class="product-fabric">Fabric: Muga-Pat Blend</p>
-                        <p class="product-description">
-                            Rich and vibrant saree perfect for festivals and celebrations. Features traditional 
-                            Assamese designs with luxurious silk texture.
-                        </p>
-                        <a href="https://wa.me/91XXXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Festive%20Silk%20Saree" 
-                           class="btn btn-whatsapp" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+                    <div class="product-grid-item">
+                        <img src="images/products/pat-mekhela-riha/riha-set-6.jpg" alt="Premium Riha Set">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Traditional Garments Collection -->
-    <section class="section" id="traditional-garments">
+    <!-- Pure Muga Mekhela Chador -->
+    <section class="section" id="pure-muga-mekhela">
+        <div class="container">
+            <div class="product-category">
+                <div class="category-header">
+                    <h2>Pure Muga Mekhela Chador</h2>
+                    <p>Experience the golden sheen of Assam's most treasured fabric. Natural golden luster, exceptional durability, and timeless traditional motifs.</p>
+                </div>
+                <div class="product-grid">
+                    <div class="product-grid-item">
+                        <img src="images/products/pure-muga-mekhela/muga-1.jpg" alt="Golden Muga Mekhela Chador">
+                    </div>
+                    <div class="product-grid-item">
+                        <img src="images/products/pure-muga-mekhela/muga-2.jpg" alt="Traditional Muga Silk Set">
+                    </div>
+                    <div class="product-grid-item">
+                        <img src="images/products/pure-muga-mekhela/muga-3.jpg" alt="Handwoven Muga Mekhela">
+                    </div>
+                    <div class="product-grid-item">
+                        <img src="images/products/pure-muga-mekhela/muga-4.jpg" alt="Premium Muga Silk">
+                    </div>
+                    <div class="product-grid-item">
+                        <img src="images/products/pure-muga-mekhela/muga-5.jpg" alt="Elegant Muga Chador">
+                    </div>
+                    <div class="product-grid-item">
+                        <img src="images/products/pure-muga-mekhela/muga-6.jpg" alt="Classic Muga Design">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pure Tas Pat Mekhela Chador -->
+    <section class="section section-secondary-bg" id="pure-tas-pat-mekhela">
+        <div class="container">
+            <div class="product-category">
+                <div class="category-header">
+                    <h2>Pure Tas Pat Mekhela Chador</h2>
+                    <p>Rich texture meets vibrant beauty. Tas Pat silk offers lustrous sheen and intricate weaves, ideal for festive and formal occasions.</p>
+                </div>
+                <div class="product-grid">
+                    <div class="product-grid-item">
+                        <img src="images/products/tas-pat-mekhela/tas-pat-1.jpg" alt="Tas Pat Mekhela Chador">
+                    </div>
+                    <div class="product-grid-item">
+                        <img src="images/products/tas-pat-mekhela/tas-pat-2.jpg" alt="Tas Silk Mekhela Set">
+                    </div>
+                    <div class="product-grid-item">
+                        <img src="images/products/tas-pat-mekhela/tas-pat-3.jpg" alt="Handwoven Tas Pat">
+                    </div>
+                    <div class="product-grid-item">
+                        <img src="images/products/tas-pat-mekhela/tas-pat-4.jpg" alt="Festive Tas Pat Mekhela">
+                    </div>
+                    <div class="product-grid-item">
+                        <img src="images/products/tas-pat-mekhela/tas-pat-5.jpg" alt="Premium Tas Silk">
+                    </div>
+                    <div class="product-grid-item">
+                        <img src="images/products/tas-pat-mekhela/tas-pat-6.jpg" alt="Vibrant Tas Pat Design">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tas Jora & Rasor Jora -->
+    <section class="section" id="tas-rasor-jora">
+        <div class="container">
+            <div class="product-category">
+                <div class="category-header">
+                    <h2>Tas Jora & Rasor Jora</h2>
+                    <p>Coordinated traditional sets combining elegance and versatility. Perfect for cultural events, festivals, and special gatherings.</p>
+                </div>
+                <div class="product-grid">
+                    <div class="product-grid-item">
+                        <img src="images/products/jora-sets/jora-1.jpg" alt="Tas Jora Set">
+                    </div>
+                    <div class="product-grid-item">
+                        <img src="images/products/jora-sets/jora-2.jpg" alt="Rasor Jora Traditional">
+                    </div>
+                    <div class="product-grid-item">
+                        <img src="images/products/jora-sets/jora-3.jpg" alt="Handwoven Jora Set">
+                    </div>
+                    <div class="product-grid-item">
+                        <img src="images/products/jora-sets/jora-4.jpg" alt="Tas Jora Elegant">
+                    </div>
+                    <div class="product-grid-item">
+                        <img src="images/products/jora-sets/jora-5.jpg" alt="Rasor Jora Premium">
+                    </div>
+                    <div class="product-grid-item">
+                        <img src="images/products/jora-sets/jora-6.jpg" alt="Traditional Jora Collection">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality & Craftsmanship Section -->
+    <section class="section section-secondary-bg">
         <div class="container">
             <div class="section-title">
-                <h2>Traditional Garments</h2>
-                <p>Authentic Assamese attire for every occasion</p>
+                <h2>Our Commitment to Quality</h2>
+                <p>What makes our collection authentic</p>
             </div>
 
-            <div class="products-grid">
-                <!-- Product 9 -->
-                <div class="product-card">
-                    <div class="product-image" data-placeholder="Gamosa">
-                        <img src="images/products/traditional-garments/gamosa.jpg" alt="Traditional Gamosa">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Traditional Gamosa</h3>
-                        <p class="product-fabric">Fabric: Cotton with Silk Border</p>
-                        <p class="product-description">
-                            Authentic Assamese Gamosa with traditional red border motifs. A symbol of respect 
-                            and Assamese identity, handwoven with precision.
-                        </p>
-                        <a href="https://wa.me/91XXXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Traditional%20Gamosa" 
-                           class="btn btn-whatsapp" target="_blank" rel="noopener">Enquire on WhatsApp</a>
-                    </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">✨</div>
+                    <h3>100% Authentic</h3>
+                    <p>Every piece is genuine handwoven silk, sourced directly from skilled Assamese artisans and weaver communities.</p>
                 </div>
 
-                <!-- Product 10 -->
-                <div class="product-card">
-                    <div class="product-image" data-placeholder="Chador">
-                        <img src="images/products/traditional-garments/chador.jpg" alt="Silk Chador">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Silk Chador</h3>
-                        <p class="product-fabric">Fabric: Muga Silk</p>
-                        <p class="product-description">
-                            Elegant Assamese chador (stole) in pure Muga silk. Perfect for draping over 
-                            traditional outfits or as a standalone accessory.
-                        </p>
-                        <a href="https://wa.me/91XXXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Silk%20Chador" 
-                           class="btn btn-whatsapp" target="_blank" rel="noopener">Enquire on WhatsApp</a>
-                    </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🧵</div>
+                    <h3>Traditional Techniques</h3>
+                    <p>Our products showcase centuries-old weaving methods that have been preserved and passed down through generations.</p>
                 </div>
 
-                <!-- Product 11 -->
-                <div class="product-card">
-                    <div class="product-image" data-placeholder="Eri Shawl">
-                        <img src="images/products/traditional-garments/eri-shawl.jpg" alt="Eri Silk Shawl">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Eri Silk Shawl</h3>
-                        <p class="product-fabric">Fabric: Eri Silk</p>
-                        <p class="product-description">
-                            Warm and luxurious Eri silk shawl with traditional patterns. Known for its thermal 
-                            properties and soft texture, perfect for cool evenings.
-                        </p>
-                        <a href="https://wa.me/91XXXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Eri%20Silk%20Shawl" 
-                           class="btn btn-whatsapp" target="_blank" rel="noopener">Enquire on WhatsApp</a>
-                    </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Cultural Authenticity</h3>
+                    <p>Each design reflects true Assamese motifs and patterns, honoring our rich textile heritage and cultural identity.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Call to Action -->
-    <section class="section section-secondary-bg">
-        <div class="container text-center">
-            <h2>Can't Find What You're Looking For?</h2>
-            <p class="cta-text"> 
-                Get in touch with us for personalized assistance!
-            </p>
-            <div class="d-flex justify-center gap-2 btn-container">
-                <a href="contact.html" class="btn btn-primary">Contact Us</a>
-                <a href="https://wa.me/919864637816?text=Hi,%20I'd%20like%20to%20know%20more%20about%20your%20products" 
-                   class="btn btn-whatsapp" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    <section class="section visit-store-section">
+        <div class="container">
+            <div class="visit-store-content text-center">
+                <h2>Visit Us to Experience Our Collection</h2>
+                <p>
+                    Our Jorhat store welcomes you to see, touch, and appreciate the quality of authentic Assamese silk. 
+                    Our knowledgeable staff will guide you through our collection and help you find the perfect piece 
+                    for your needs.
+                </p>
+                <div class="visit-store-buttons">
+                    <a href="contact.html" class="btn btn-primary">Get Store Directions</a>
+                    <a href="about.html" class="btn btn-secondary-alt">Learn About Us</a>
+                </div>
             </div>
         </div>
     </section>
@@ -276,44 +283,17 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <!-- About Section -->
-                <div class="footer-section">
+                <div class="footer-brand">
                     <h3>PureMuga</h3>
                     <p>
-                        Preserving the rich tradition of Assamese handwoven silk garments. PureMuga is a family-run venture
-                         dedicated to authentic craftsmanship and cultural heritage.
+                        Showcase website for the Jorhat branch store, representing authentic Assamese 
+                        handwoven silk garments and traditional craftsmanship.
                     </p>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <a href="index.html">Home</a>
-                    <a href="products.html">Products</a>
-                    <a href="about.html">About Us</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p>📞 +91 98646 37816</p>
-                    <p>📧 manojsamabai@gmail.com</p>
-                    <p>📍 Jorhat, Assam, India</p>
-                </div>
-
-                <!-- Business Hours -->
-                <div class="footer-section">
-                    <h3>Business Hours</h3>
-                    <p>Monday - Saturday</p>
-                    <p>10:00 AM - 8:00 PM</p>
-                    <p>Sunday: Closed</p>
-                   
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 PureMuga. All rights reserved. | Handcrafted with ❤️ in Assam</p>
+                <p>&copy; 2026 PureMuga - Jorhat. All rights reserved.</p>
             </div>
         </div>
     </footer>
